@@ -1,0 +1,31 @@
+try:
+    for folder in folders:
+        path = os.path.join(base_dir, folder)
+        os.makedirs(path, exist_ok=True)
+        print(f"✅ Created: {path}")
+
+    # Create placeholder files
+    placeholder_files = [
+        "config/credentials.yaml",
+        "strategies/base_strategy.py",
+        "execution/etrade_order_manager.py",
+        "risk/risk_manager.py",
+        "scheduler/job_runner.py",
+        "utils/data_fetcher.py",
+        "utils/logger.py",
+        "backtesting/backtest_engine.py",
+        "main.py",
+        "requirements.txt"
+    ]
+
+    for file in placeholder_files:
+        file_path = os.path.join(base_dir, file)
+        if not os.path.exists(file_path):
+            with open(file_path, 'w') as f:
+                f.write("# Placeholder\n")
+            print(f"📄 Created: {file_path}")
+
+    print("\n🚀 Project structure setup complete!")
+
+except Exception as e:
+    print(f"❌ Error while creating project structure: {e}")
