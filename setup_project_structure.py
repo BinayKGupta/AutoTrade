@@ -13,11 +13,13 @@ def create_project_structure(base_dir="etrade_trading_bot"):
         placeholder_files = [
             "config/credentials.yaml",
             "strategies/base_strategy.py",
+            "strategies/ema_crossover.py",
             "execution/etrade_order_manager.py",
             "risk/risk_manager.py",
             "scheduler/job_runner.py",
             "utils/data_fetcher.py",
             "utils/logger.py",
+            "utils/auth_manager.py",
             "backtesting/backtest_engine.py",
             "main.py",
             "requirements.txt"
